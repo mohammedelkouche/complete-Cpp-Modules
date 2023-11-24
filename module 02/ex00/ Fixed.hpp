@@ -6,7 +6,14 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:58:32 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/22 11:58:33 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:01:46 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FIXED_HPP
+#define FIXED_HPP
+
+#include <iostream>
+#include <string>
+
+#endif
