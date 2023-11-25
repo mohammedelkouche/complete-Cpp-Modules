@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:58:35 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/25 16:01:22 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/11/25 22:05:52 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,28 @@ Fixed::Fixed(const Fixed&obj)
     *this = obj;
 }
 
+Fixed::Fixed(const int nbr)
+{
+    std::cout << " Int constructor called " << std::endl;
+    this->fix_point = nbr * (1 << this->fraction_bits);
+}
+
+Fixed::Fixed(const float nbr)
+{
+    std::cout << " Float constructor called " << std::endl;
+    this->fix_point = roundf(nbr * (1 << this->fraction_bits));
+}
+
+float Fixed::toFloat(void)const
+{
+    return (this->fix_point / (float)(1 << this->fraction_bits));
+}
+
+int Fixed::toInt(void)const
+{
+    return ((this->fix_point / (1 << this->fraction_bits)));
+}
+
 int Fixed::getRawBits(void) const
 {
     std::cout << " getRawBits member function called " << std::endl;
@@ -37,8 +59,14 @@ Fixed& Fixed::operator = (const Fixed &obj)
 {
     std::cout << " Copy assignment operator called " << std::endl;
     if (this != &obj)
-        this->fix_point = obj.getRawBits();
+        this->fix_point = obj.fix_point;
     return (*this);
+}
+
+std::ostream& operator<<(std::ostream& os ,const Fixed &obj)
+{
+    os << obj.toFloat();
+    return (os);
 }
 
 void Fixed::setRawBits( int const raw)
