@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:58:35 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/25 22:05:52 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/11/26 21:54:31 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,39 @@ void Fixed::setRawBits( int const raw)
     this->fix_point = raw;
 }
 
+bool Fixed::operator < (const Fixed &obj) const
+{
+    return (this->fix_point < obj.fix_point);
+}
+bool Fixed::operator > (const Fixed &obj) const
+{
+    return (this->fix_point > obj.fix_point);
+}
+bool Fixed::operator <= (const Fixed &obj) const
+{
+    return (this->fix_point <= obj.fix_point);
+}
+bool Fixed::operator >= (const Fixed &obj) const
+{
+    return (this->fix_point >= obj.fix_point);
+}
+bool Fixed::operator == (const Fixed &obj) const
+{
+    return (this->fix_point == obj.fix_point);
+}
+bool Fixed::operator != (const Fixed &obj) const
+{
+    return (this->fix_point != obj.fix_point);
+}
+
+Fixed& Fixed::operator + (const Fixed &obj)const
+{
+    return(this->toFloat() + obj.toFloat());
+}
+// Fixed& Fixed::operater + (const Fixed &obj)const
+// {
+    
+// }
 Fixed::~Fixed()
 {
     std::cout << " Destructor called " << std::endl;
