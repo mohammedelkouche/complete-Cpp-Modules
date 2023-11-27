@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:58:29 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/25 22:57:52 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/11/27 02:14:25 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int main( void )
     std::cout << a++ << std::endl;
     std::cout << a << std::endl;
     std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
+    // std::cout << Fixed::max( a, b ) << std::endl;
     return 0;
 }
