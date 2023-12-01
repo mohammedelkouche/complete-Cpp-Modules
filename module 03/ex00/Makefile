@@ -10,11 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixed-point
+NAME = ClapTrap
 
-SRC = main.cpp  Fixed.cpp
+SRC = main.cpp  ClapTrap.cpp
 
-HEADER =  Fixed.hpp
+HEADER =  ClapTrap.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
