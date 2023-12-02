@@ -6,24 +6,26 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 22:31:11 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/01 23:22:44 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/02 22:20:28 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-void ClapTrap::Status(void)
-{
-	//
-	std::cout << "Energy_points " <<  Energy_points <<std::endl;
-	std::cout << "Hit_point     " <<  Hit_point <<std::endl;
-	std::cout << "Name          " << Name <<std::endl;
-	//
-}
+// void ClapTrap::Status(void)
+// {
+// 	std::cout << "Energy_points " <<  Energy_points <<std::endl;
+// 	std::cout << "Hit_point     " <<  Hit_point <<std::endl;
+// 	std::cout << "Name          " << Name <<std::endl;
+// }
 
 ClapTrap::ClapTrap()
 {
 	std::cout << " Default constructor called " << std::endl;
+	this->Name = "name";
+	this->Hit_point = 10;
+	this->Energy_points = 10;
+	this->Attack_damage = 0;
 };
 
 ClapTrap::ClapTrap(std::string name)
@@ -73,7 +75,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {	
-	if (Energy_points > 0 && Hit_point > 0)
+	if (Hit_point > 0)
 	{
 		std::cout << " ClapTrap " << Name << " took damage of "
 		<< amount << " hit points." << std::endl;
@@ -82,7 +84,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		else
 			Hit_point = Hit_point - amount;
 		
-		std::cout << Hit_point <<std::endl;
+		// std::cout << Hit_point <<std::endl;
 	}
 	else
 		std::cout << " ClapTrap " << Name << " is dead " << std::endl;

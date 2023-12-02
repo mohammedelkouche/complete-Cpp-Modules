@@ -6,12 +6,13 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 11:31:06 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/02 23:13:29 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/02 22:28:08 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main( void )
 {
@@ -19,7 +20,8 @@ int main( void )
     // ClapTrap a("lion");
     // ClapTrap b(a);
     // ScavTrap a;
-    ScavTrap a("lion");
+    // ScavTrap a("lion");
+    // FragTrap a("lion");
     // ClapTrap a;
     // while (i <= 9)
     // {
@@ -33,8 +35,6 @@ int main( void )
     // }
     // a.takeDamage(12);
     // a.takeDamage(346);
-    // a.takeDamage(-1);
-    // a.Status();
     // a.attack("CHIWA&ED");
     // ClapTrap b(a);
     // while (i <= 10)
@@ -42,5 +42,20 @@ int main( void )
     //     a.beRepaired(1);
     //     i++;
     // }
+    
+    // FragTrap
+    
+    // FragTrap b;
+    FragTrap z("test");
+    // z.takeDamage(120);
+    // z.highFivesGuys();
+    // a.Status();
+    
+
+    //// test //////
+
+    
+    
+    
     return 0;
 }

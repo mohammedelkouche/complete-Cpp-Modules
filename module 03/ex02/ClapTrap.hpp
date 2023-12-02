@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 11:32:45 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/02 18:07:41 by mel-kouc         ###   ########.fr       */
+/*   Created: 2023/12/02 11:31:18 by mel-kouc          #+#    #+#             */
+/*   Updated: 2023/12/02 22:32:41 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
-#include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class ClapTrap
 {
+    protected :
+        std::string  Name;
+        unsigned int Hit_point;
+        unsigned int Energy_points;
+        unsigned int Attack_damage;
     public :
-        ScavTrap();
-        ScavTrap(std::string name);
-        ScavTrap(const ScavTrap &obj);
-        ScavTrap& operator = (const ScavTrap &obj);
-        void guardGate(void);
+        ClapTrap();
+        ClapTrap(std::string name);
+        ClapTrap(const ClapTrap &obj);
+        ClapTrap& operator = (const ClapTrap &obj);
         void attack(const std::string& target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
+
         // void Status(void);
-        ~ScavTrap();
+        ~ClapTrap();
 };
 
 #endif
