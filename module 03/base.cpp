@@ -47,14 +47,14 @@ using namespace std;
 // A simple BaseClass with public, protected and private members
 class BaseClass
 {
-public:
-  int _public_member;
-  
-protected:
-  int _protected_member;
-  
-private:
-  int _private_member;
+  public:
+    int _public_member;
+    
+  protected:
+    int _protected_member;
+    
+  private:
+    int _private_member;
 };
 
 // A derived class using the PUBLIC base class access specifier
