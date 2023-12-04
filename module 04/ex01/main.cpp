@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 17:30:51 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/04 20:29:52 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:36:34 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int main( void )
     std::cout << z->getType() << " " << std::endl;
     k->makeSound();
     z->makeSound();
-
     delete meta;
     delete j;
     delete i;
