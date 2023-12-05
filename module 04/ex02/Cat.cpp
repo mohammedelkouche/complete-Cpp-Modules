@@ -1,65 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 22:50:32 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/05 23:20:29 by mel-kouc         ###   ########.fr       */
+/*   Created: 2023/12/03 17:31:13 by mel-kouc          #+#    #+#             */
+/*   Updated: 2023/12/05 18:05:24 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 #include "Brain.hpp"
 
-Dog::Dog()
+Cat::Cat()
 {
-    std::cout << "default  Dog constractor called" << std::endl;
-    this->type = "Dog";
+    std::cout << "default  Cat constractor called" << std::endl;
+    this->type = "Cat";
     this->brain = new Brain();
 }
 
-Dog::Dog(const Dog&obj)
+Cat::Cat(const Cat&obj)
 {
-    std::cout << "copy constractor Dog called" << std::endl;
+    std::cout << "copy constractor Cat called" << std::endl;
     this->type = obj.type;
     this->brain = new Brain();
-    for(int i = 0; i < 100; i++)
-        this->brain[i] = obj.brain[i];
     // this->brain = new Brain(*(obj.brain));
-    // *(this->brain) = *(obj.brain);
-    // this->brain = obj.brain;
+    *(this->brain) = *(obj.brain);
 }
-Dog& Dog::operator= (const Dog &obj)
+Cat& Cat::operator= (const Cat &obj)
 {
-    std::cout << "copy assignement operator Dog called" << std::endl;
+    std::cout << "copy assignement operator Cat called" << std::endl;
     if (this != &obj)
     {
         this->type = obj.type;
         delete this->brain;
         this->brain = new Brain();
-        for(int i = 0; i < 100; i++)
-            this->brain[i] = obj.brain[i];
         // this->brain = new Brain(*(obj.brain));
-        // shallow copie
         // this->brain = obj.brain;
+        *(this->brain) = *(obj.brain);
     }
     return (*this);
-}  
-
-// std::string Dog::getType()
-// {
-//     return (this->type);
-// }
-
-void Dog::makeSound() const
-{
-    std::cout << " the " << type  << " say how " << std::endl;
 }
 
-Dog::~Dog()
+void Cat::makeSound() const
 {
-    std::cout << "Dog destractor called" << std::endl;
+    std::cout << " the " << type  << " say myaw " << std::endl;
+}
+
+Cat::~Cat()
+{
+    std::cout << "Cat destractor called" << std::endl;
     delete brain;
 }

@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 17:31:13 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/04 22:35:44 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/05 23:01:00 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ Cat::Cat(const Cat&obj)
 {
     std::cout << "copy constractor Cat called" << std::endl;
     this->type = obj.type;
-    this->brain = obj.brain;
+    this->brain = new Brain();
+    for(int i = 0; i < 100; i++)
+        this->brain[i] = obj.brain[i];
+    // this->brain = new Brain(*(obj.brain));
+    // *(this->brain) = *(obj.brain);
+    // *this = obj;
 }
 Cat& Cat::operator= (const Cat &obj)
 {
@@ -32,10 +37,16 @@ Cat& Cat::operator= (const Cat &obj)
     if (this != &obj)
     {
         this->type = obj.type;
-        this->brain = obj.brain;
+        delete this->brain;
+        this->brain = new Brain();
+        for(int i = 0; i < 100; i++)
+            this->brain[i] = obj.brain[i];
+        // this->brain = new Brain(*(obj.brain));
+        // shallow copie
+        // this->brain = obj.brain;
     }
     return (*this);
-}  
+}
 
 void Cat::makeSound() const
 {

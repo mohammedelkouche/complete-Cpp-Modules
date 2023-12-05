@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 17:30:51 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/05 23:47:32 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/05 23:41:42 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
 
-// void l()
-// {
-//     system ("leaks Polymorphism");
-// }
+void l()
+{
+    system ("leaks Polymorphism");
+}
 
 int main( void )
 {
-    // atexit(l);
+    atexit(l);
     // const Animal* meta = new Animal();
     // const Animal* j = new Dog();
     // const Animal* i = new Cat();
@@ -39,29 +39,24 @@ int main( void )
     
     //------------------------------------------------/
     
-    // const Animal* j = new Dog();
-    // const Animal* i = new Cat();
-    // delete j;//should not create a leak
-    // delete i;
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j;//should not create a leak
+    delete i;
     
     //--------------- array of Animal objects ---------------/
 
-    int size_arr = 4;
+        // int size_arr = 4;
     
-    Animal *arr[size_arr];
-    for(int i = 0; i < size_arr / 2; i++)
-        arr[i] = new Dog();
-    for(int i = size_arr / 2; i < size_arr ; i++)
-        arr[i] = new Cat();
-    for(int i = 0; i < size_arr ; i++)
-        arr[i]->makeSound();
-    for(int i = 0; i < size_arr ; i++)
-        delete arr[i];
-
-    // Dog basic;
-    // {
-    //     Dog tmp = basic;
-    // }
+    // Animal *arr[size_arr];
+    // for(int i = 0; i < size_arr / 2; i++)
+    //     arr[i] = new Dog();
+    // for(int i = size_arr / 2; i < size_arr ; i++)
+    //     arr[i] = new Cat();
+    // for(int i = 0; i < size_arr ; i++)
+    //     arr[i]->makeSound();
+    // for(int i = 0; i < size_arr ; i++)
+    //     delete arr[i];
     
     //-------------------- WrongAnimal ------------------/
     
@@ -74,6 +69,9 @@ int main( void )
     // std::cout << z->getType() << " " << std::endl;
     // k->makeSound();
     // z->makeSound();
+    // delete meta;
+    // delete j;
+    // delete i;
     // delete z;
     // delete k;
 

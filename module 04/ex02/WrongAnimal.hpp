@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 21:38:03 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/05 17:36:38 by mel-kouc         ###   ########.fr       */
+/*   Created: 2023/12/04 15:13:58 by mel-kouc          #+#    #+#             */
+/*   Updated: 2023/12/04 15:17:53 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
+
 #include <iostream>
 
-class Brain
+class WrongAnimal
 {
-    std::string ideas[100];
+	protected :
+		std::string type;
 	public :
-		Brain();
-		Brain(const Brain&obj);
-		Brain& operator = (const Brain &obj);
-		// std::string getType();
-		// void makeSound() const;
-		~Brain();
+		WrongAnimal();
+		WrongAnimal(const WrongAnimal&obj);
+		WrongAnimal& operator = (const WrongAnimal &obj);
+		std::string getType() const;
+		void makeSound() const;
+		~WrongAnimal();
 };
 
 #endif
