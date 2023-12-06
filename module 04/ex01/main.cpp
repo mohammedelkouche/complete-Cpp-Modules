@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 17:30:51 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/05 23:47:32 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:55:34 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ int main( void )
     
     //------------------------------------------------/
     
-    // const Animal* j = new Dog();
-    // const Animal* i = new Cat();
-    // delete j;//should not create a leak
-    // delete i;
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j;//should not create a leak
+    delete i;
     
     //--------------- array of Animal objects ---------------/
 
@@ -57,11 +57,6 @@ int main( void )
         arr[i]->makeSound();
     for(int i = 0; i < size_arr ; i++)
         delete arr[i];
-
-    // Dog basic;
-    // {
-    //     Dog tmp = basic;
-    // }
     
     //-------------------- WrongAnimal ------------------/
     

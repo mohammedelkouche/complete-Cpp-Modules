@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 17:30:51 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/06 10:10:57 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:56:08 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,25 @@ int main( void )
 
     //------------------------------------------------/
     
-    // const Animal* j = new Dog();
+    const Animal* j = new Dog();
     
-    // const Animal* i = new Cat();
-    // delete j;//should not create a leak
-    // delete i;
+    const Animal* i = new Cat();
+    delete j;//should not create a leak
+    delete i;
     
     //--------------- array of Animal objects ---------------/
 
-        // int size_arr = 4;
+        int size_arr = 4;
     
-    // Animal *arr[size_arr];
-    // for(int i = 0; i < size_arr / 2; i++)
-    //     arr[i] = new Dog();
-    // for(int i = size_arr / 2; i < size_arr ; i++)
-    //     arr[i] = new Cat();
-    // for(int i = 0; i < size_arr ; i++)
-    //     arr[i]->makeSound();
-    // for(int i = 0; i < size_arr ; i++)
-    //     delete arr[i];
+    Animal *arr[size_arr];
+    for(int i = 0; i < size_arr / 2; i++)
+        arr[i] = new Dog();
+    for(int i = size_arr / 2; i < size_arr ; i++)
+        arr[i] = new Cat();
+    for(int i = 0; i < size_arr ; i++)
+        arr[i]->makeSound();
+    for(int i = 0; i < size_arr ; i++)
+        delete arr[i];
     
     //-------------------- WrongAnimal ------------------/
     
