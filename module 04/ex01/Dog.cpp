@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 22:50:32 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/05 23:20:29 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/06 10:16:45 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,7 @@ Dog& Dog::operator= (const Dog &obj)
         // this->brain = obj.brain;
     }
     return (*this);
-}  
-
-// std::string Dog::getType()
-// {
-//     return (this->type);
-// }
+}
 
 void Dog::makeSound() const
 {

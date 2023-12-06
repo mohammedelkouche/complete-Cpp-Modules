@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 17:31:05 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/04 22:43:03 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/06 10:18:14 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Cat : public Animal
 		Cat();
 		Cat(const Cat&obj);
 		Cat& operator = (const Cat &obj);
-		// std::string getType();
 		void makeSound() const;
 		~Cat();
 };

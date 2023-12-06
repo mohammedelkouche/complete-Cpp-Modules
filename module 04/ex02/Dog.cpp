@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 22:50:32 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/05 17:53:15 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/06 10:16:56 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ Dog::Dog(const Dog&obj)
     std::cout << "copy constractor Dog called" << std::endl;
     this->type = obj.type;
     this->brain = new Brain();
+    for(int i = 0; i < 100; i++)
+        this->brain[i] = obj.brain[i];
     // this->brain = new Brain(*(obj.brain));
-    *(this->brain) = *(obj.brain);
+    // *(this->brain) = *(obj.brain);
+    // this->brain = obj.brain;
 }
 Dog& Dog::operator= (const Dog &obj)
 {
@@ -36,16 +39,14 @@ Dog& Dog::operator= (const Dog &obj)
         this->type = obj.type;
         delete this->brain;
         this->brain = new Brain();
+        for(int i = 0; i < 100; i++)
+            this->brain[i] = obj.brain[i];
         // this->brain = new Brain(*(obj.brain));
-        *(this->brain) = *(obj.brain);
+        // shallow copie
+        // this->brain = obj.brain;
     }
     return (*this);
-}  
-
-// std::string Dog::getType()
-// {
-//     return (this->type);
-// }
+}
 
 void Dog::makeSound() const
 {

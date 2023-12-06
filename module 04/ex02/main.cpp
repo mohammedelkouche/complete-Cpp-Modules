@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 17:30:51 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/05 23:41:42 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/06 10:10:57 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,14 @@ int main( void )
     // delete meta;
     // delete j;
     // delete i;
-    
+
     //------------------------------------------------/
     
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    delete j;//should not create a leak
-    delete i;
+    // const Animal* j = new Dog();
+    
+    // const Animal* i = new Cat();
+    // delete j;//should not create a leak
+    // delete i;
     
     //--------------- array of Animal objects ---------------/
 
