@@ -12,9 +12,9 @@
 
 NAME = Polymorphism
 
-SRC = main.cpp  AMateria.cpp Ice.cpp Cure.cpp
+SRC = main.cpp  AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 
-HEADER =  AMateria.hpp Ice.hpp Cure.hpp
+HEADER =  AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp IMateriaSource.hpp MateriaSource.hpp
 OBJ = $(SRC:.cpp=.o)
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98

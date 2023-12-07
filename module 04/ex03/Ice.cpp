@@ -6,22 +6,19 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 18:12:26 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/06 23:42:37 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/07 23:00:00 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 Ice::Ice()
 {
     this->type = "ice";
 }
 
-Ice::Ice(std::string const & type)
-{
-    this->type = type;
-}
 Ice::Ice(const Ice &obj)
 {
     *this = obj;
@@ -40,6 +37,10 @@ std::string const & Ice::getType()const
 AMateria* Ice::clone()const
 {
     return(new Ice());
+}
+void Ice::use(ICharacter& target)
+{
+    std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
 }
 Ice::~Ice()
 {

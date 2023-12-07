@@ -6,21 +6,30 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 17:30:51 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/06 16:58:40 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/07 23:33:30 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-// void l()
-// {
-//     system ("leaks Polymorphism");
-// }
-
-int main( void )
+#include "Character.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
+int main()
 {
-    // atexit(l);
-    
-
-    return 0;
+    IMateriaSource* src = new MateriaSource();
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
+    ICharacter* me = new Character("me");
+    AMateria* tmp;
+    tmp = src->createMateria("ice");
+    me->equip(tmp);
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
+    ICharacter* bob = new Character("bob");
+    me->use(0, *bob);
+    me->use(1, *bob);
+    delete bob;
+    delete me;
+    delete src;
 }

@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:59:46 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/06 22:01:30 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/07 23:01:56 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,22 @@
 
 AMateria::AMateria()
 {
-	std::cout << "default  AMateria constractor called" << std::endl;
-    this->type = "";
+    this->type = "type";
 }
 
-AMateria::AMateria(std::string const &type)
-{
-	this->type = type;
-}
 AMateria& AMateria::operator = (const AMateria &obj)
 {
-	if (this != &obj)
-        this->type = obj.type;
+	// if (this != &obj)
+    //     this->type = obj.type;
+    (void)obj;
     return (*this);
 }
 
 AMateria::AMateria(const AMateria &obj)
 {
-    *this = obj;
+   (void)obj;
 }
+
 std::string const & AMateria::getType() const
 {
     return(this->type);
@@ -40,5 +37,5 @@ std::string const & AMateria::getType() const
 
 AMateria::~AMateria()
 {
-	std::cout << "default  AMateria destractor called" << std::endl;
+    
 }
