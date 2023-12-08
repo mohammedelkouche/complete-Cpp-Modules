@@ -66,8 +66,13 @@ void Character::unequip(int idx)
 {
     if(idx >= 0 && idx <= 3)
     {
+        if (inventory[idx] != NULL)
+        {
+            delete inventory[idx];
+            inventory[idx] = NULL;
+            return ;
+        }
         //you should handle leaks you have to ask someone or came up with an idea how to do so
-        inventory[idx] = NULL;
     }
 }
 //use the index that have type of target
@@ -81,4 +86,6 @@ Character::~Character()
 {
     for (int i = 0; i < 4;i++)
         delete inventory[i];
+        // if (inventory[i])
+        //     delete inventory[i];
 }

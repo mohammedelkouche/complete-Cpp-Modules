@@ -59,11 +59,16 @@ AMateria* MateriaSource::createMateria(std::string const & type)
             return(materia[i]->clone());
         }
     }
+    // the materia doesn't exist
     return NULL;
 }
 
 MateriaSource::~MateriaSource()
 {
     // for (int i = 0; i < 4;i++)
-    //     delete inventory[i];
+    //     delete materia[i];
+
+    // loop 
+    //      if (materia[i])
+    //          elete materia[i];
 }
