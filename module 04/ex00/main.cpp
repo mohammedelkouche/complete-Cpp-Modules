@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 17:30:51 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/04 20:29:52 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/09 11:59:29 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
 
-void l()
-{
-    system ("leaks Polymorphism");
-}
+// void l()
+// {
+//     system ("leaks Polymorphism");
+// }
 
 int main( void )
 {
-    atexit(l);
+    // atexit(l);
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-    
+
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
     i->makeSound(); //will output the cat sound!
@@ -36,21 +36,21 @@ int main( void )
     
     //-------------------- WrongAnimal ------------------/
     
-    std::cout <<  std::endl;
+    // std::cout <<  std::endl;
     
-    const WrongAnimal* k = new WrongAnimal();
-    const WrongAnimal* z = new WrongCat();
+    // const WrongAnimal* k = new WrongAnimal();
+    // const WrongAnimal* z = new WrongCat();
     
-    std::cout << k->getType() << " " << std::endl;
-    std::cout << z->getType() << " " << std::endl;
-    k->makeSound();
-    z->makeSound();
+    // std::cout << k->getType() << " " << std::endl;
+    // std::cout << z->getType() << " " << std::endl;
+    // k->makeSound();
+    // z->makeSound();
 
     delete meta;
     delete j;
     delete i;
-    delete z;
-    delete k;
+    // delete z;
+    // delete k;
 
     return 0;
 }

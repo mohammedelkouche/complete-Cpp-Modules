@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:21:09 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/07 22:46:41 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/09 14:59:47 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Character : public ICharacter
     private :
         std::string name;
         AMateria* inventory[4];
+        AMateria* handler_array[1000];
+        int index;
     public  :
     Character();
     Character(std::string _name);
