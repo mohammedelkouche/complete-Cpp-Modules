@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 17:30:51 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/06 16:56:08 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:18:14 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
 
-void l()
-{
-    system ("leaks Polymorphism");
-}
+// void l()
+// {
+//     system ("leaks Polymorphism");
+// }
 
 int main( void )
 {
-    atexit(l);
+    // atexit(l);
     // const Animal* meta = new Animal();
     // const Animal* j = new Dog();
     // const Animal* i = new Cat();
