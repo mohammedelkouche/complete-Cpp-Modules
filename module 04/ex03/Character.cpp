@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:24:08 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/07 23:12:17 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/08 19:08:47 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,26 @@ Character::Character(const Character &obj)
     
     name = obj.getName();
     for (int i = 0; i < 4;i++)
-        inventory[i] = NULL;
+        inventory[i] = obj.inventory[i]->clone();
 }
 
 
 Character& Character::operator = (const Character &obj)
 {
-    (void)obj;
+    this->name = obj.name; 
+    if (this != &obj)
+    {
+         for (int i =0; i < 4 ; i++)
+         {
+            if (inventory[i])
+            {
+                delete inventory[i];
+                inventory[i] = NULL;     
+            }
+        }
+        for (int i = 0; i < 4 ; i++)
+            inventory[i] = obj.inventory[i]->clone();
+    }
     return *this;
 }
 
@@ -50,10 +63,9 @@ std::string const & Character::getName()const
 // add Amateria in first empty element
 void Character::equip(AMateria* m)
 {
-    std::cout << m->getType() << " equip" << std::endl;
     for(int i = 0; i < 4; i++)
     {
-        if(inventory[i] == NULL)
+        if (inventory[i] == NULL)
         {
             inventory[i] = m;
                 break;
@@ -72,7 +84,7 @@ void Character::unequip(int idx)
             inventory[idx] = NULL;
             return ;
         }
-        //you should handle leaks you have to ask someone or came up with an idea how to do so
+        //you should handle leaks
     }
 }
 //use the index that have type of target
@@ -85,7 +97,6 @@ void Character::use(int idx, ICharacter& target)
 Character::~Character()
 {
     for (int i = 0; i < 4;i++)
-        delete inventory[i];
-        // if (inventory[i])
-        //     delete inventory[i];
+        if (inventory[i])
+            delete inventory[i];
 }

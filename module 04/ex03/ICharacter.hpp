@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:19:28 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/07 22:45:33 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:27:52 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #define ICHARACTER_HPP
 
 #include "AMateria.hpp"
-class   AMateria;
+
+class   AMateria; // Forward Declarations
+
 class ICharacter
 {
     public:

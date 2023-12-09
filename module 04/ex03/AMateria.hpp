@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:59:49 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/07 23:00:50 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:50:57 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
-class Charater;
 class   AMateria
 {
 	protected	:
