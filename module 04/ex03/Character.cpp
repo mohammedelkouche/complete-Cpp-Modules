@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:24:08 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/09 18:23:35 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/09 22:59:08 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ Character::Character()
     for (int i = 0; i < 4;i++)
         inventory[i] = NULL;
     index = 0;
-    for (int i = 0; i < 1000;i++)
-        handler_array[i] = NULL;
+    // for (int i = 0; i < 1000;i++)
+    //     handler_array[i] = NULL;
 }
 Character::Character(std::string _name)
 {
@@ -28,21 +28,14 @@ Character::Character(std::string _name)
     for (int i = 0; i < 4;i++)
         inventory[i] = NULL;
     index = 0;
-    for (int i = 0; i < 1000;i++)
-        handler_array[i] = NULL;
 }
 
 
 Character::Character(const Character &obj)
 {
-    name = obj.getName();
     for (int i = 0; i < 4;i++)
-        if(obj.inventory[i])
-            inventory[i] = obj.inventory[i]->clone();
-    std::cout << " world "<< std::endl;
-    index = obj.index;
-    for (int i = 0; i < 1000;i++)
-        handler_array[i] = obj.handler_array[i];
+        inventory[i] = NULL;
+    *this = obj;
 }
 
 
@@ -51,8 +44,8 @@ Character& Character::operator = (const Character &obj)
     this->name = obj.name; 
     if (this != &obj)
     {
-         for (int i =0; i < 4 ; i++)
-         {
+        for (int i =0; i < 4 ; i++)
+        {
             if (inventory[i])
             {
                 delete inventory[i];
@@ -76,44 +69,33 @@ std::string const & Character::getName()const
 // add Amateria in first empty element
 void Character::equip(AMateria* m)
 {
-    int flag = 0;
-    for(int i = 0; i < 4; i++)
+    int i = 0;
+    while (i < 4)
     {
         if (inventory[i] == NULL)
         {
-            flag = 1;
             inventory[i] = m;
                 break;
         }
+        i++;
     }
-    if (flag == 0)
-    {
-        if (index < 1000)
-        {
-            std::cout << " test" << std::endl;
-            handler_array[index] = m;
-            index++;
-        }
-        else
-            std::cout << " you can't equip Amateria" << std::endl;
-    }
+    if(i == 4)
+        delete m;
 }
-void Character::unequip(int idx)
+void Character::unequip(int idx) 
 {
-    if(idx >= 0 && idx <= 3)
+    if(idx >= 0 && idx <= 3 && index < 1000)
     {
         if (inventory[idx] != NULL)
         {
-            if (index < 1000)
-            {
-                std::cout << " hello" << std::endl;
-                handler_array[index] = inventory[idx];
-                index++;
-            }
+            handler_array[index] = inventory[idx];
+            index++;
             inventory[idx] = NULL;
             return ;
         }
     }
+    else if (index >= 1000)
+        std::cout << "you riched the limit of uniquip or invalid index" << std::endl;
 }
 //use the index that have type of target
 void Character::use(int idx, ICharacter& target)
@@ -127,6 +109,6 @@ Character::~Character()
     for (int i = 0; i < 4;i++)
         if (inventory[i])
             delete inventory[i];
-    for (int j = 0; j < 1000;j++)
+    for (int j = 0; j < index;j++)
         delete handler_array[j];
 }

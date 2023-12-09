@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 21:02:17 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/08 17:40:30 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/09 22:57:22 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,34 +20,44 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource &obj)
 {
-    
+    for (int i = 0; i < 4;i++)
+        materia[i] = NULL;
     *this = obj;
 }
-
 
 MateriaSource& MateriaSource::operator = (const MateriaSource &obj)
 {
     if (this != &obj)
     {
         for (int i = 0; i < 4;i++)
-            materia[i] = obj.materia[i];
+        {
+            if(materia[i])
+                delete materia[i];
+            if(obj.materia[i])
+                materia[i] = obj.materia[i]->clone();
+            else
+                materia[i] = NULL;
+        }
     }
     return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria*mtr)
 {
+    int i = 0;
     if (!mtr)
         return ;
-    for (int i = 0; i < 4 ; i++)
+    while (i < 4)
     {
         if (materia[i] == NULL)
         {
             materia[i] = mtr;
             break;
         }
+        i++;
     }
-    //ila kan 3amer delete mtr
+    if(i == 4)
+        delete mtr;
 }
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
@@ -63,6 +73,8 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 MateriaSource::~MateriaSource()
 {
     for (int i = 0; i < 4;i++)
-         if (materia[i])
-             delete materia[i];
+    {
+        if (materia[i])
+            delete materia[i];
+    }
 }
