@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:59:49 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/08 16:50:57 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:58:23 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class   AMateria
  	public	:
 		AMateria();
 		AMateria(const AMateria &obj);
+		AMateria(std::string const & type);
 		AMateria& operator = (const AMateria &obj);
 		std::string const &getType()const;
 		virtual AMateria *clone() const = 0;
