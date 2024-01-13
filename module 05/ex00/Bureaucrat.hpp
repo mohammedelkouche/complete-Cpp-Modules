@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 21:40:20 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/12/26 15:28:18 by mel-kouc         ###   ########.fr       */
+/*   Created: 2024/01/13 22:01:18 by mel-kouc          #+#    #+#             */
+/*   Updated: 2024/01/13 22:31:31 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef BUREAUCRAT.HPP
+#define BUREAUCRAT.HPP
 
 #include <iostream>
 
-class Animal
+class   Bureaucrat
 {
-	protected :
-		std::string type;
+	const std::string	name;
+	int					grade;
 	public :
-		Animal();
-		Animal(const Animal&obj);
-		Animal& operator = (const Animal &obj);
-		std::string getType() const;
-		virtual void makeSound() const;
-		virtual ~Animal();
+		Bureaucrat();
+		std::string getName() const;
+		getGrade();
+		GradeTooHighException();
+		GradeTooLowException();
+		~Bureaucrat();
 };
 
 #endif
