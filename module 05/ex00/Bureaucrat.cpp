@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 10:39:47 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/14 23:19:56 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/15 12:15:27 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name)
 {
     std::cout << "parametrize constractor Bureaucrat called " << std::endl;
     if (_grade < 1)
-        throw Bureaucrat::GradeTooLowException();
-    else if (_grade > 150)
         throw Bureaucrat::GradeTooHighException();
+    else if (_grade > 150)
+        throw Bureaucrat::GradeTooLowException();
     this->grade = _grade;
 }
 
@@ -64,7 +64,7 @@ void    Bureaucrat::incrementGrade()
     if (grade < 150)
         grade++;
     else
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
 }
 void    Bureaucrat::decrementGrade()
 {
@@ -72,7 +72,7 @@ void    Bureaucrat::decrementGrade()
     if (grade > 1)
         grade--;
     else
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::GradeTooHighException();
 }
 
 std::ostream& operator<<(std::ostream& os , const Bureaucrat &other)
