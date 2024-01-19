@@ -6,22 +6,41 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 10:28:04 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/15 18:26:47 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/19 23:47:53 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+
 
 int main()
 {
     try
     {
-        Form hello;
-        Form hello1("test", 0, 10, 5);
-        Bureaucrat obeject1("aristo", 13);
-
-        obeject1.signForm(hello1);
+        // AForm hello;
+        // AForm hello1("test", 10, 5);
+        Bureaucrat obeject1("aristo", 143);
+        ShrubberyCreationForm a("hello");
+        obeject1.signForm(a);
+        a.beSigned(obeject1);
+        a.execute(obeject1);
+        
+        // const int a = 20;
+        // const int c = a;
+        // const int *q = &a;
+        // int *z;
+        // z = const_cast <int*> (q);
+        // *z = 6; // invalid 
+        // std::cout << c << std::endl;
+        // std::cout << a << std::endl;
+        // std::cout << *z << std::endl;
+        // const int b = 40;
+        // b = const_cast <int> (a);
+        // std::cout << b << std::endl;
+        
+        // obeject1.signForm(hello1);
         // hello1.beSigned(obeject1);
         
         // obeject1.decrementGrade();

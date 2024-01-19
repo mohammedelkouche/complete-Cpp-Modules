@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 10:39:47 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/15 18:20:40 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/19 11:41:04 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,13 @@ std::ostream& operator<<(std::ostream& os , const Bureaucrat &other)
     return (os);
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &Aform)
 {
-    if (grade <= form.getFormGradeSign())
-        std::cout << this->name << " signed " << form.getFormName() << std::endl;
+    if (grade <= Aform.getFormGradeSign())
+        std::cout << this->name << " signed " << Aform.getFormName() << std::endl;
     else
     {
-        std::cout << this->name << " couldn't sign " << form.getFormName() 
+        std::cout << this->name << " couldn't sign " << Aform.getFormName() 
         << " because "   << std::endl; 
     }
 }

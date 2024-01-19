@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 22:01:18 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/15 17:51:49 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/19 11:40:24 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class   Bureaucrat
 {
@@ -41,7 +41,7 @@ class   Bureaucrat
 		};
 		void	incrementGrade();
 		void	decrementGrade();
-		void	signForm(Form &form);
+		void	signForm(AForm &Aform);
 		~Bureaucrat();
 };
 

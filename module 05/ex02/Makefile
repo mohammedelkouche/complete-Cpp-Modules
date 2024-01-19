@@ -12,9 +12,9 @@
 
 NAME = bureaucrat
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp 
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 
-HEADER = Bureaucrat.hpp Form.hpp
+HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
