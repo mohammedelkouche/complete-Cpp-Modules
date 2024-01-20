@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:21:26 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/19 22:43:55 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/21 00:09:09 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Form",
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm("Form", 145, 137)
 {
     this->target = other.target;
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
+{
+    if (this != &other)
+    {
+        // this->name = other.name;
+        this->target = other.target;
+    }
+    return (*this);
 }
 
 void    ShrubberyCreationForm::execute(Bureaucrat const &executor)
