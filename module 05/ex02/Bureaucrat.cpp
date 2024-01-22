@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 10:39:47 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/19 11:41:04 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/21 13:51:48 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void Bureaucrat::signForm(AForm &Aform)
     else
     {
         std::cout << this->name << " couldn't sign " << Aform.getFormName() 
-        << " because "   << std::endl; 
+        << " because his grade " << grade << "greater than " << Aform.getFormGradeSign() << std::endl; 
     }
 }
 
