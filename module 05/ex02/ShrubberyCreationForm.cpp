@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:21:26 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/21 00:09:09 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:47:57 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 void    ShrubberyCreationForm::execute(Bureaucrat const &executor)
-{   
-    if (getFormSignstate() && executor.getGrade() <= getFormGradeSign())
+{
+    // if (getFormSignstate() && executor.getGrade() <= getFormGradeSign())
+    if (getFormSignstate() && executor.getGrade() <= getFormGradeExe())
     {
         std::string tree;
         tree = "        &&& &&  & && \n\
@@ -65,7 +66,7 @@ void    ShrubberyCreationForm::execute(Bureaucrat const &executor)
         // std::cout << "hello\n" << std::endl;
     }
     else
-        std::cout << "hello" << std::endl;
+        throw AForm::GradeTooLowException();
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
