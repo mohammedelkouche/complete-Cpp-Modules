@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 10:28:04 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/23 17:46:58 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:45:56 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
         // AForm hello1("test", 10, 5);
         
         // // *************
-        Bureaucrat obeject1("aristo", 21);
+        // Bureaucrat obeject1("aristo", 21);
         // ShrubberyCreationForm a("hello");
         // // RobotomyRequestForm q("efwf");
         // obeject1.signForm(a);
@@ -38,6 +38,10 @@ int main()
         Bureaucrat obeject1("aristo", 21);
         RobotomyRequestForm test;
         test.execute(obeject1);
+        
+        
+        // ********************
+
         
         // const int a = 20;
         // const int c = a;

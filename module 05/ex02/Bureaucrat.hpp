@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 22:01:18 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/19 11:40:24 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/24 17:13:45 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class   Bureaucrat
 		void	incrementGrade();
 		void	decrementGrade();
 		void	signForm(AForm &Aform);
+		void	executeForm(AForm const & form);
 		~Bureaucrat();
 };
 
