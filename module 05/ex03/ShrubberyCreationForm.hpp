@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:59:25 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/22 19:56:39 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/28 11:29:09 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ShrubberyCreationForm : public AForm
         ShrubberyCreationForm(const ShrubberyCreationForm &other);
         ~ShrubberyCreationForm();
         ShrubberyCreationForm& operator = (const ShrubberyCreationForm &other);
-        void execute(Bureaucrat const & executor);
+        void execute(Bureaucrat const & executor) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 22:07:15 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/24 15:01:31 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/28 11:33:25 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 #include <cstdlib>
 #include <ctime>   
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("Form", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
 {
     this->target = "default RobotomyRequestForm";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) :AForm("Form", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) :AForm("RobotomyRequestForm", 72, 45)
 {
     this->target = target;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm("Form", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm("RobotomyRequestForm", 72, 45)
 {
     this->target = other.target;
 }
@@ -38,7 +38,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &o
     return (*this);
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const & executor)
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     std::cout << "Makes some drilling noises." << std::endl;
     std::srand(time(0));
@@ -50,9 +50,9 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor)
         else
             succes = false;
         if (succes)
-            std::cout << "informs that " << target << " has been robotomized " << std::endl;
+            std::cout  << target << " has been robotomized " << std::endl;
         else
-            std::cout << "informs that the robotomy failed. " << std::endl;
+            std::cout << "the robotomy failed. " << std::endl;
     }
     else
         throw AForm::GradeTooLowException();
