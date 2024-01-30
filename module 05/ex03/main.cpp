@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 10:28:04 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/28 22:56:09 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/30 10:52:55 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void l()
 
 int main()
 {
+    atexit(l);
     try
     {
-        atexit(l);
         // AForm hello;
         // AForm hello1("test", 10, 5);
         
@@ -92,9 +92,10 @@ int main()
         // std::cout << "hello world " << std::endl;
         Bureaucrat obeject1("aristo", 21);
         Intern b;
-        AForm *a = b.makeForm("Shrubbe","test");
+        AForm *a = b.makeForm("ShrubberyCreation","test");
+        a->beSigned(obeject1);
         a->execute(obeject1);
-        // delete a;
+        delete a;
     }
     catch(const std::exception& e)
     {

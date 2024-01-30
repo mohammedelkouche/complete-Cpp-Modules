@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:07:03 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/28 16:43:20 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:15:25 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,7 @@ AForm& AForm::operator = (const AForm &other)
     if (this != &other)
     {
         const_cast<std::string&>(_name) = other._name;
-        const_cast<bool&>(_sign_state) = other._sign_state;
-        // this->_sign_state = other._sign_state;
+        this->_sign_state = other._sign_state;
         const_cast<int&>(_grade_sign) = other._grade_sign;
         const_cast<int&>(_grade_exe) = other._grade_exe;
     }

@@ -6,13 +6,13 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 10:39:47 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/24 23:03:16 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:09:05 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("khouribga")
+Bureaucrat::Bureaucrat() : name("default Bureaucrat")
 {
     std::cout << " Default constractor Bureaucrat called " << std:: endl;
     this->grade = 10;
@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name)
     this->grade = _grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other)
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name)
 {
     std::cout << "Copy constructor called " << std::endl;
     this->grade = other.grade;
@@ -83,12 +83,16 @@ std::ostream& operator<<(std::ostream& os , const Bureaucrat &other)
 
 void Bureaucrat::signForm(AForm &Aform)
 {
-    if (grade <= Aform.getFormGradeSign())
-        std::cout << this->name << " signed " << Aform.getFormName() << std::endl;
-    else
+
+    try
     {
-        std::cout << this->name << " couldn't sign " << Aform.getFormName() 
-        << " because his grade " << grade << "greater than " << Aform.getFormGradeSign() << std::endl;
+        Aform.beSigned(*this);
+        std::cout << getName() << " signed " << Aform.getFormName() << std::endl;
+    }
+    catch(const AForm::GradeTooLowException& e)
+    {
+        std::cout << getName() <<  " couldn't sign " << Aform.getFormName() << 
+        " becouse " << e.what() << std::endl;
     }
 }
 
@@ -97,15 +101,23 @@ Bureaucrat& Bureaucrat::operator = (const Bureaucrat &other)
     std::cout << "copy assignement operator called " << std::endl;
     if (this != &other)
     {
-        // this->name = other.name;
+        const_cast<std::string&>(this->name) = other.name;
         this->grade = other.grade;
     }
     return (*this);
 }
 
-void Bureaucrat::executeForm(AForm const & form)
+void Bureaucrat::executeForm(AForm const &form)
 {
-    
+    try
+    {
+        form.execute(*this);
+        std::cout << getName() << " executed " << form.getFormName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
 }
 
 Bureaucrat::~Bureaucrat()

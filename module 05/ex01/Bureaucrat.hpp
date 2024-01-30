@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 22:01:18 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/15 17:51:49 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/27 13:21:02 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ class   Bureaucrat
 		int	getGrade() const;
 		class	GradeTooHighException : public std::exception
 		{
-			virtual const char* what() const throw();
+			public :
+				virtual const char* what() const throw();
 		};
 		class	GradeTooLowException : public std::exception
 		{
-			virtual const char* what() const throw();
+			public :
+				virtual const char* what() const throw();
 		};
 		void	incrementGrade();
 		void	decrementGrade();

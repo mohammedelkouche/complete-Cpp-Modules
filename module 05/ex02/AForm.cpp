@@ -6,13 +6,13 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:07:03 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/24 15:58:18 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:15:53 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm() : _name("rabat") ,_grade_sign(10) ,_grade_exe(40)
+AForm::AForm() : _name("default AForm") ,_grade_sign(10) ,_grade_exe(40)
 {
     std::cout << " Default constractor Form called " << std::endl;
     this->_sign_state = false;
@@ -78,8 +78,7 @@ AForm& AForm::operator = (const AForm &other)
     if (this != &other)
     {
         const_cast<std::string&>(_name) = other._name;
-        const_cast<bool&>(_sign_state) = other._sign_state;
-        // this->_sign_state = other._sign_state;
+        this->_sign_state = other._sign_state;
         const_cast<int&>(_grade_sign) = other._grade_sign;
         const_cast<int&>(_grade_exe) = other._grade_exe;
     }

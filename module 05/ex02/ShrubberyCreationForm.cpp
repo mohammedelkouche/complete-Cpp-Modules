@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:21:26 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/23 12:47:57 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/28 11:33:52 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Form", 145 , 137)
     this->target = "default";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Form", 145 , 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145 , 137)
 {
     this->target = target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm("Form", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm("ShrubberyCreationForm", 145, 137)
 {
     this->target = other.target;
 }
@@ -38,7 +38,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
     return (*this);
 }
 
-void    ShrubberyCreationForm::execute(Bureaucrat const &executor)
+void    ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
     // if (getFormSignstate() && executor.getGrade() <= getFormGradeSign())
     if (getFormSignstate() && executor.getGrade() <= getFormGradeExe())

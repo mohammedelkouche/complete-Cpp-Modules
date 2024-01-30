@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 10:39:47 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/28 11:32:20 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:09:58 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name)
     this->grade = _grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other)
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name)
 {
     std::cout << "Copy constructor called " << std::endl;
     this->grade = other.grade;
@@ -101,7 +101,7 @@ Bureaucrat& Bureaucrat::operator = (const Bureaucrat &other)
     std::cout << "copy assignement operator called " << std::endl;
     if (this != &other)
     {
-        // this->name = other.name;
+        const_cast<std::string&>(this->name) = other.name;
         this->grade = other.grade;
     }
     return (*this);

@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 00:01:50 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/15 16:33:33 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/01/27 14:48:49 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,13 @@ class Form
         int     getFormGradeExe() const;
         class	GradeTooHighException : public std::exception
 		{
-			virtual const char* what() const throw();
+            public :
+			    virtual const char* what() const throw();
 		};
 		class	GradeTooLowException : public std::exception
 		{
-			virtual const char* what() const throw();
+            public :
+			    virtual const char* what() const throw();
 		};
         void    beSigned(Bureaucrat &sign);
         ~Form();
