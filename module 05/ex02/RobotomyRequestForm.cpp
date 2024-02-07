@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 22:07:15 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/28 11:33:25 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:07:25 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &o
     if (this != &other)
     {
         this->target = other.target;
+        AForm::operator=(other);
     }
     return (*this);
 }

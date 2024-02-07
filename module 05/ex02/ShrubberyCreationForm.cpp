@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:21:26 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/28 11:33:52 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:07:28 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,14 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 {
     if (this != &other)
     {
-        // this->name = other.name;
         this->target = other.target;
+        AForm::operator=(other);
     }
     return (*this);
 }
 
 void    ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-    // if (getFormSignstate() && executor.getGrade() <= getFormGradeSign())
     if (getFormSignstate() && executor.getGrade() <= getFormGradeExe())
     {
         std::string tree;
@@ -63,7 +62,6 @@ void    ShrubberyCreationForm::execute(Bureaucrat const &executor) const
             outfile << tree;
         else
             std::cout<< "Failed to create file for shrubbery" << std::endl;
-        // std::cout << "hello\n" << std::endl;
     }
     else
         throw AForm::GradeTooLowException();

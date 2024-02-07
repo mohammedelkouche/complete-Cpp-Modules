@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:06:53 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/28 11:26:12 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/07 20:23:07 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ class AForm
 		virtual ~AForm();
 };
 
-std::ostream& operator<< (std::ostream& os, const AForm &other); 
+std::ostream& operator<< (std::ostream& os, const AForm &other);
 
 #endif

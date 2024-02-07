@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:15:45 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/29 20:52:47 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/07 22:28:50 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ AForm* Intern::makeForm(std::string name, std::string target)
     switch (i)
     {
         case 0 :
-            std::cout << "hello" <<std::endl;
             return(new ShrubberyCreationForm(target));
             // break;
         case 1 :

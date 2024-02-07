@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:47:42 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/28 11:33:07 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:08:29 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
     if (this != &other)
     {
         this->target = other.target;
+        AForm::operator=(other);
     }
     return (*this);
 }

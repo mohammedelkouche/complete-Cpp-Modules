@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 10:39:47 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/01/30 11:09:58 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/07 13:27:48 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,18 @@ const char*    Bureaucrat::GradeTooLowException::what() const throw()
 void    Bureaucrat::incrementGrade()
 {
     std::cout << "incrementGrade member function called" << std::endl;
-    if (grade < 150)
-        grade++;
-    else
-        throw Bureaucrat::GradeTooLowException();
-}
-void    Bureaucrat::decrementGrade()
-{
-    std::cout << "decrementGrade member function called" << std::endl;
     if (grade > 1)
         grade--;
     else
         throw Bureaucrat::GradeTooHighException();
+}
+void    Bureaucrat::decrementGrade()
+{
+    std::cout << "decrementGrade member function called" << std::endl;
+    if (grade < 150)
+        grade++;
+    else
+        throw Bureaucrat::GradeTooLowException();
 }
 
 std::ostream& operator<<(std::ostream& os , const Bureaucrat &other)
