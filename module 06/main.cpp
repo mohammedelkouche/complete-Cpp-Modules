@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 16:04:47 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/12 18:13:18 by mel-kouc         ###   ########.fr       */
+/*   Created: 2024/02/12 14:46:08 by mel-kouc          #+#    #+#             */
+/*   Updated: 2024/02/12 16:33:51 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
-#include <iostream>
+#include "ScalarConverter.hpp"
 
-class ScalarConverter
+int main(int argc, char **argv)
 {
-    private :
-        ScalarConverter();
-        ScalarConverter(const ScalarConverter &other);
-    public :
-        ScalarConverter& operator = (const ScalarConverter &other);
-        ~ScalarConverter();
-        static   void convert(std::string str);
-};
-
-#endif
+    if (argc == 2)
+        ScalarConverter::convert(argv[1]);
+    else
+        std::cout << "error in argument" << std ::endl;
+    return(0);
+}
