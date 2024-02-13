@@ -6,11 +6,11 @@
 #    By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/10 16:04:28 by mel-kouc          #+#    #+#              #
-#    Updated: 2024/02/10 16:05:48 by mel-kouc         ###   ########.fr        #
+#    Updated: 2024/02/13 22:52:01 by mel-kouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+NAME = ScalarConverter
 
 SRC = main.cpp ScalarConverter.cpp
 
