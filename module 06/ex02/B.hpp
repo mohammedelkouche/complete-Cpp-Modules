@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 16:32:08 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/15 10:05:22 by mel-kouc         ###   ########.fr       */
+/*   Created: 2024/02/15 10:22:15 by mel-kouc          #+#    #+#             */
+/*   Updated: 2024/02/15 10:24:08 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-#define DATA_HPP
+#ifndef SERIALIZER_HPP
+#define SERIALIZER_HPP
+#include "Data.hpp"
 
-class Data
+class B : public Data
 {
-    private :
-        int data;
     public :
-        Data();
-        Data(const Data &other);
-        Data& operator = (const Data &other);
-        ~Data();
+        ~B();
 };
 
 #endif

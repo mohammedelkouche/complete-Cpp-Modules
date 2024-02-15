@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 16:32:08 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/15 10:05:22 by mel-kouc         ###   ########.fr       */
+/*   Created: 2024/02/15 10:08:42 by mel-kouc          #+#    #+#             */
+/*   Updated: 2024/02/15 10:47:36 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-#define DATA_HPP
+#ifndef BASE_HPP
+#define BASE_HPP
+#include "Data.hpp"
 
-class Data
+class Base
 {
-    private :
-        int data;
     public :
-        Data();
-        Data(const Data &other);
-        Data& operator = (const Data &other);
-        ~Data();
+        Base();
+        virtual ~Base();
+        Base * generate(void);
+        void identify(Base* p);
+        void identify(Base& p);
 };
 
 #endif

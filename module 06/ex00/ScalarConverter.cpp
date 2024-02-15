@@ -6,15 +6,11 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 16:04:44 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/13 22:44:40 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/14 15:25:31 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include <sstream>
-#include <limits>
-#include <string>
-#include <iomanip>
 
 ScalarConverter::ScalarConverter()
 {
@@ -217,33 +213,51 @@ void    convert_to_double(std::string str)
         std::cout << "double : " << static_cast <double> (value) << std::endl;
 }
 
+void    not_a_Number(std::string str)
+{
+    (void)str;
+    std::cout << "char : " << "impossible" << std::endl;
+    std::cout << "int : " << "impossible" << std::endl;
+    std::cout << "float : " << "nanf" << std::endl;
+    std::cout << "double : " << "nan" << std::endl;
+    // std::cout << "double : " << static_cast <double> (std::string str) << std::endl;
+    // std::cout << "double : " << static_cast <double> (std::string str) << std::endl;
+}
+
+void    infinity(std::string str)
+{
+    std::cout << "char : " << "impossible" << std::endl;
+    std::cout << "int : " << "impossible" << std::endl;
+    if (!str.compare("+inf"))
+        std::cout << "float : " << "+inf" << std::endl;
+    if (!str.compare("-inf"))
+        std::cout << "float : " << "-inf" << std::endl;
+    if (!str.compare("+inf"))
+        std::cout << "double : " << "+inf" << std::endl;
+    if (!str.compare("-inf"))
+        std::cout << "double : " << "-inf" << std::endl;
+}
+
 void ScalarConverter::convert(std::string str)
 {
-    // get_type of str;
-    // bool    status_type;
     std::string type = "";
-    
     if(str.empty())
         return ;
     if (check_is_int(str))
     {
         type = "INT";
-        std::cout << "int type" << std::endl;
     }
     else if (check_is_char(str))
     {
         type = "CHAR";
-        std::cout << "char type" << std::endl;
     }
     else if (check_is_float(str))
     {
         type = "FLOAT";
-        std::cout << "float type" << std::endl;
     }
     else if (check_is_double(str))
     {
         type = "DOUBLE";
-        std::cout << "double type" << std::endl;
     }
     if (!type.empty() && !type.compare("CHAR"))
         convert_to_char(str);
@@ -253,5 +267,8 @@ void ScalarConverter::convert(std::string str)
         convert_to_float(str);
     else if (!type.empty() && !type.compare("DOUBLE"))
         convert_to_double(str);
-    // check +inf -inf nan nanf
-}
+    else if (!str.compare("nan") || !str.compare("nanf"))
+        not_a_Number(str);
+    else if (!str.compare("+inf") || !str.compare("-inf"))
+        infinity(str);
+} 

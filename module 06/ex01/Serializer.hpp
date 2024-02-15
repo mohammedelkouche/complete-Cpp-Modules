@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:32:17 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/14 16:35:47 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:36:45 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,4 @@ class   Serializer
         static Data* deserialize(uintptr_t raw);
 };
 
-#endif;
+#endif

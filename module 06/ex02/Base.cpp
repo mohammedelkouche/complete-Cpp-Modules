@@ -1,27 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 16:32:08 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/15 10:05:22 by mel-kouc         ###   ########.fr       */
+/*   Created: 2024/02/15 10:08:40 by mel-kouc          #+#    #+#             */
+/*   Updated: 2024/02/15 10:51:45 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-#define DATA_HPP
+#include "Base.hpp"
 
-class Data
-{
-    private :
-        int data;
-    public :
-        Data();
-        Data(const Data &other);
-        Data& operator = (const Data &other);
-        ~Data();
-};
-
-#endif
