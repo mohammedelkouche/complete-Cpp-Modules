@@ -6,11 +6,12 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:32:14 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/15 12:35:56 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/15 18:14:22 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
+#include "Data.hpp"
 
 Serializer::Serializer()
 {
@@ -35,7 +36,7 @@ Serializer& Serializer::operator= (const Serializer &other)
     return(*this);
 }
 
-uintptr_t Serializer::Serializer(Data* ptr)
+uintptr_t Serializer::serialize(Data* ptr)
 {
     return (reinterpret_cast<uintptr_t> (ptr));
 }

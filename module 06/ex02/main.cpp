@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 10:08:42 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/15 20:06:57 by mel-kouc         ###   ########.fr       */
+/*   Created: 2024/02/15 21:54:40 by mel-kouc          #+#    #+#             */
+/*   Updated: 2024/02/15 22:54:21 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-#define BASE_HPP
-#include <iostream>
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-class Base
+int main()
 {
-    public :
-        Base();
-        virtual ~Base();
-        Base * generate(void);
-        void identify(Base* p);
-        void identify(Base& p);
-};
+    Base obj;
+    // Base *ptr1;
+    
+    // Base *ptr;
+    // ptr->generate();
+    Base *ptr = new A;
+    obj.generate();
+    // ptr->identify();
+    obj.identify(ptr);
+    obj.identify(*ptr);
 
-#endif
+    
+    // Base *ptr = generate();
+    
+    return (0);
+}

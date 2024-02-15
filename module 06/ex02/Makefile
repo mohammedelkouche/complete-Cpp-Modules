@@ -6,13 +6,13 @@
 #    By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/15 10:08:52 by mel-kouc          #+#    #+#              #
-#    Updated: 2024/02/15 10:44:23 by mel-kouc         ###   ########.fr        #
+#    Updated: 2024/02/15 22:45:56 by mel-kouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ScalarConverter
 
-SRC = main.cpp
+SRC = main.cpp Base.cpp
 
 HEADER = Base.hpp A.hpp B.hpp C.hpp
 

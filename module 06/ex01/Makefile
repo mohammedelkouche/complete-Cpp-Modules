@@ -6,7 +6,7 @@
 #    By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 15:27:00 by mel-kouc          #+#    #+#              #
-#    Updated: 2024/02/14 15:31:59 by mel-kouc         ###   ########.fr        #
+#    Updated: 2024/02/15 17:51:04 by mel-kouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = ScalarConverter
 
 SRC = main.cpp Serializer.cpp
 
-HEADER = Serializer.hpp
+HEADER = Serializer.hpp Data.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

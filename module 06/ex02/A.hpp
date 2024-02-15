@@ -6,19 +6,20 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:22:17 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/15 10:23:48 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/15 22:50:22 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
-#include "Data.hpp"
+#ifndef A_HPP
+#define A_HPP
+#include "Base.hpp"
 
-class A : public Data
+class A : public Base
 {
     public :
-        ~A();
+        A(){};
+        ~A(){};
 };
 
 #endif
