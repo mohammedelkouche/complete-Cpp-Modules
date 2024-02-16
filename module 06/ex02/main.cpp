@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 21:54:40 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/15 22:54:21 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:11:54 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,9 @@
 int main()
 {
     Base obj;
-    // Base *ptr1;
-    
-    // Base *ptr;
-    // ptr->generate();
-    Base *ptr = new A;
-    obj.generate();
-    // ptr->identify();
-    obj.identify(ptr);
-    obj.identify(*ptr);
 
-    
-    // Base *ptr = generate();
-    
+    Base *ptr =  obj.generate();
+    obj.identify(ptr);
+    obj.identify(*ptr);    
     return (0);
 }

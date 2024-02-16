@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:08:40 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/15 22:48:10 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:39:08 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "B.hpp"
 #include "C.hpp"
 #include <cstdlib>
+#include <exception>
 #include <ctime> 
 
 Base::Base()
@@ -42,11 +43,11 @@ Base* Base::generate(void)
 
 void Base::identify(Base *p)
 {
-    if (dynamic_cast<A *>(p))
+    if (dynamic_cast<A *>(p) != NULL)
         std::cout << " A " << std::endl;
-    else if (dynamic_cast<B *>(p))
+    else if (dynamic_cast<B *>(p) != NULL)
         std::cout << " B " << std::endl;
-    else if (dynamic_cast<C *>(p))
+    else if (dynamic_cast<C *>(p) != NULL)
         std::cout << " C " << std::endl;
 }
 
@@ -59,7 +60,6 @@ void Base::identify(Base& p)
     }
     catch(const std::exception& e)
     {
-        // std::cerr << e.what() << '\n';
         std::cout << " failed to cast " << std::endl;
     }
     try
@@ -69,7 +69,6 @@ void Base::identify(Base& p)
     }
     catch(const std::exception& e)
     {
-        // std::cerr << e.what() << '\n';
        std::cout << " failed to cast " << std::endl;
     }
     try
@@ -79,9 +78,7 @@ void Base::identify(Base& p)
     }
     catch(const std::exception& e)
     {
-        // std::cerr << e.what() << '\n';
         std::cout << " failed to cast " << std::endl;
     }
-    
 }
 

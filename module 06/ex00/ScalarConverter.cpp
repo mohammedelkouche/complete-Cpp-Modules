@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 16:04:44 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/14 15:25:31 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/16 10:52:48 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,8 +220,6 @@ void    not_a_Number(std::string str)
     std::cout << "int : " << "impossible" << std::endl;
     std::cout << "float : " << "nanf" << std::endl;
     std::cout << "double : " << "nan" << std::endl;
-    // std::cout << "double : " << static_cast <double> (std::string str) << std::endl;
-    // std::cout << "double : " << static_cast <double> (std::string str) << std::endl;
 }
 
 void    infinity(std::string str)
