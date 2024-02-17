@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 16:04:44 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/16 10:52:48 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/17 19:35:40 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,12 @@ void    convert_to_char(std::string str)
 
 void    convert_to_int(std::string str)
 {
+    int test = 65;
+    // int ptr = &test;
+    char p  = static_cast <char> (test);
+    // char p  = reinterpret_cast <char> (test);
+    std::cout << p << std::endl;
+    std::cout << "hello"<< std::endl;
     long long int value;
     int flag = 0;
     std::istringstream my_stream(str);

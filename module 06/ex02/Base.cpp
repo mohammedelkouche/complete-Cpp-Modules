@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:08:40 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/16 16:39:08 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:38:28 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void Base::identify(Base& p)
 {
     try
     {
-        Base& a = dynamic_cast <A &>(p);
+        A& a = dynamic_cast <A &>(p);
         std::cout << &a << " A " << std::endl;
     }
     catch(const std::exception& e)
@@ -64,7 +64,7 @@ void Base::identify(Base& p)
     }
     try
     {
-        Base& b = dynamic_cast <B &>(p);
+        B& b = dynamic_cast <B &>(p);
         std::cout  << &b<< " B " << std::endl;
     }
     catch(const std::exception& e)
@@ -73,7 +73,7 @@ void Base::identify(Base& p)
     }
     try
     {
-        Base& c = dynamic_cast <C &>(p);
+        C& c = dynamic_cast <C &>(p);
         std::cout  << &c << " C " << std::endl;
     }
     catch(const std::exception& e)
