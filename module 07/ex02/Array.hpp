@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 22:57:39 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/18 17:47:53 by mel-kouc         ###   ########.fr       */
+/*   Created: 2024/02/18 17:50:02 by mel-kouc          #+#    #+#             */
+/*   Updated: 2024/02/18 22:49:31 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-#define ITER_HPP
-#include <iostream>
-
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
 template <typename T>
-void    print_elelment(T &element)
+class Array
 {
-    std::cout << element <<std::endl;
+    private :
+        T   *array;
+        unsigned int n;
+    public :
+        Array();
+        Array(unsigned int  n);
+        Array(const Array <T>& other);
+        Array<T>& operator = (const Array <T>& other);
+        Array<T>& operator[] (unsigned int index);
+        ~Array();
+        
+};
+template <typename T>
+Array<T>::Array()
+{
+    
 }
-
 template <typename T>
-void    iter(T *array, int lengnt, void (*ptr_funct)( T&))
+Array<T>::~Array()
 {
-    for (int i = 0; i < lengnt; i++)
-        ptr_funct(array[i]);
+    
 }
 
 #endif
