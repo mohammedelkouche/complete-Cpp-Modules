@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 17:50:02 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/19 15:52:36 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/20 22:15:54 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Array
         Array(unsigned int  n);
         Array(const Array <T>& other);
         Array<T>& operator = (const Array <T>& other);
-        T& operator[] (unsigned int index);
+        T& operator[] (unsigned int index)const;
         unsigned int size()const;
         ~Array();
         
@@ -71,7 +71,7 @@ Array<T>& Array<T>::operator=(const Array <T>& other)
 }
 
 template <typename T>
-T& Array<T>::operator[](unsigned int index)
+T& Array<T>::operator[](unsigned int index) const
 {
     if (index >= sizearray)
         throw std::out_of_range("Index is out of bounds");
