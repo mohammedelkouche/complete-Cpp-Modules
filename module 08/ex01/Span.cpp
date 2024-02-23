@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:21:11 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/22 16:24:09 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/23 21:01:08 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Span& Span::operator=(const Span &other)
 {
     if (this != &other)
     {
-        N  = other.N;
+        N = other.N;
         vec = other.vec;
     }
     return (*this);
@@ -74,4 +74,21 @@ int    Span::shortestSpan()
             shortvalue = dif;
     }
     return(shortvalue);
+}
+
+void    Span::range(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+    int space_vect = N - vec.size();
+    int space_other_v = end - begin;
+    if (space_other_v > space_vect || std::distance(begin, end) < 0)
+        throw std::out_of_range("the are no space to insert data");
+    vec.insert(vec.end(), begin, end);
+}
+
+void    Span::print()
+{
+    for (size_t i = 0; i < vec.size(); i++)
+    {
+        std::cout << vec[i] << std::endl;
+    }
 }

@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 23:41:56 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/22 18:21:24 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/23 18:05:39 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ class   Span
         void    addNumber(int nbr);
         int    shortestSpan();
         int    longestSpan();
-        
+        void    range(std::vector<int>::iterator begin,std::vector<int>::iterator end);
+        void    print();
 };
 
 #endif
