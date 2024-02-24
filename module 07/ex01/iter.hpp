@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 22:57:39 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/20 22:14:14 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/23 14:41:21 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ void    print_elelment(T &element)
 }
 
 template <typename T, typename U>
-void    iter(T *array, int lengnt, U func)
+void    iter(T *array, int length, U func)
 {
-    for (int i = 0; i < lengnt; i++)
+    for (int i = 0; i < length; i++)
+    {
         func(array[i]);
+    }
 }
 
 #endif

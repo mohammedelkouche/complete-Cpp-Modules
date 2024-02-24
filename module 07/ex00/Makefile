@@ -6,7 +6,7 @@
 #    By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/10 16:04:28 by mel-kouc          #+#    #+#              #
-#    Updated: 2024/02/17 22:56:50 by mel-kouc         ###   ########.fr        #
+#    Updated: 2024/02/24 10:05:01 by mel-kouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME =  templates
 
 SRC = main.cpp
 
-HEADER = header.hpp
+HEADER = Header.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

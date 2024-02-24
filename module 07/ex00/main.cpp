@@ -6,11 +6,11 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:50:54 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/18 11:14:45 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/24 10:05:07 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.hpp"
+#include "Header.hpp"
 
 int main( void ) 
 {
