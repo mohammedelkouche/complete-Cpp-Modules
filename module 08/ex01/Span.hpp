@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 23:41:56 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/23 18:05:39 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/25 21:30:41 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <vector>
 #include <exception>
+#include <algorithm>
 #include <limits>
 
 class   Span

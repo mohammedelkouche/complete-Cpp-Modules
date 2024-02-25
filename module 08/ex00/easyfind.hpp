@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:31:05 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/21 23:29:06 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/25 21:35:24 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define EASYFIND_HPP
 #include <vector>
 #include <iostream>
+#include <algorithm>
+
 
 template <typename T>
 
