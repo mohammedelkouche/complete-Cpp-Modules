@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:51:41 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/03/01 23:20:10 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/03/03 00:03:17 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ void    result(std::map<std::string, double>& myMap, std::string ligne)
     else
     {
         std::map<std::string, double>::const_iterator lower = myMap.lower_bound(date);
+        // std::cout << "hello world => " << lower->first <<std::endl;
         if (lower != myMap.begin() && lower != myMap.end())
         {
             --lower;
@@ -175,21 +176,26 @@ void    pars_input(std::string argv)
     std::string line;
     size_t pos;
     std::string date;
+    std::stringstream my_stream;
     std::string str_price;
     double price;
     // ----------------- data_base -------------------
     if (data_base.is_open())
     {
         std::getline(data_base, line);
-        // int i = 0;
         while(std::getline(data_base, line))
         {
             pos = line.find(',');
             date = line.substr(0, pos);
-            str_price = line.substr(pos + 1, line.length() - pos + 1);        
-            price = std::stod(str_price);
+            str_price = line.substr(pos + 1, line.length() - pos + 1);
+            my_stream.str(str_price);
+            if (!(my_stream >> price))
+            {
+                std::cout << "failed" << std::endl;
+                return ;
+            }   
             Map.insert(std::make_pair(date, price));
-            // i++;
+            my_stream.clear();
         }
     }
     else
@@ -200,18 +206,18 @@ void    pars_input(std::string argv)
     // ----------------- input input file -------------------
     std::ifstream myfile(argv);
     std::string myline;
-    if (!std::getline(myfile, myline))
+    if (myfile.is_open()) // open is her ?
     {
-        std::cout << " the file is empti" <<std::endl;
-        return;
-    }
-    if (myline.compare("date | value"))
-    {
-        std::cout << " Error" <<std::endl;
-        return;
-    }
-    if (myfile.is_open()) // open is not her
-    {
+        if (!std::getline(myfile, myline))
+        {
+            std::cout << " the file is empti" <<std::endl;
+            return;
+        }
+        if (myline.compare("date | value"))
+        {
+            std::cout << " Error" <<std::endl;
+            return;
+        }
         while(std::getline(myfile, myline))
         {
             if (check_ligne(myline))
