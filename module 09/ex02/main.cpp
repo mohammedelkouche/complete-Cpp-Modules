@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 20:40:14 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/03/02 23:59:39 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/03/04 00:12:01 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main(int argc, char **argv)
     if (argc > 1)
     {
         std::vector<int> v;
+        // std::deque<int> d;
         std::stringstream my_stream;
         double nbr;
         for (int i = 1; i < argc; i++)
@@ -45,20 +46,22 @@ int main(int argc, char **argv)
                 std::cout << "error: Number exceeds integer range" << std::endl;
                 return (0);
             }
-            std::cout << nbr << std::endl;
             my_stream.clear();
             v.push_back((int)nbr);
+            // d.push_back((int)nbr);
         }
+        std::cout << "Before:   ";
+        for (size_t i = 0; i < v.size(); i++)
+        {
+            std::cout << v[i] << " ";
+        }
+        std::cout  << std::endl;
         // std::cout << "size = " << v.size() << std::endl;
-        
-        merge_algo(v);
+        clock_t start = clock();
+        merge_algo_v(v, start);
+        // merge_algo_d(q);
     }
     else
         std::cout << "ERROR" << std::endl;
-    // while (++i < argc)
-    // {
-        // input(argv, argc);
-        // std::cout << atoi(argv[i]) << std::endl;
-    // }
     return (0);
 }

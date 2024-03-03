@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 20:40:18 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/03/02 18:07:22 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/03/03 23:59:27 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@
 #include <limits>
 #include <exception>
 #include <sstream>
+#include <deque>
+#include <ctime>
 // #include <stdlib.h>
 
-void    merge_algo(std::vector<int> &v);
+void    merge_algo_v(std::vector<int> &v, clock_t start);
+void    merge_algo_d(std::deque<int> &v);
 
 #endif
