@@ -6,34 +6,11 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 23:56:45 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/03/01 20:35:44 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/03/04 18:43:58 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
-
-// RPN::RPN()
-// {
-    
-// }
-// RPN::~RPN()
-// {
-    
-// }
-
-// RPN::RPN(const RPN &other)
-// {
-//     *this = other;
-// }
-
-// RPN& RPN::operator=(const RPN &other)
-// {
-//     if (this != &other)
-//     {
-        
-//     }
-//     return (*this);
-// }
 
 int is_operator(char op)
 {
@@ -73,7 +50,7 @@ int    check_argv(std::string argv)
         else
             return (0);
     }
-    if (digit_cout - operator_cout != 1)
+    if (digit_cout - operator_cout != 1 || digit_cout == 1)
         return (0);
     return (1);
 }

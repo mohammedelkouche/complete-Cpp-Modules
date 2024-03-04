@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 20:40:14 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/03/04 00:12:01 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/03/04 18:24:06 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int main(int argc, char **argv)
 {
-    if (argc > 1)
+    if (argc > 2)
     {
         std::vector<int> v;
-        // std::deque<int> d;
+        std::deque<int> d;
         std::stringstream my_stream;
         double nbr;
         for (int i = 1; i < argc; i++)
@@ -36,11 +36,12 @@ int main(int argc, char **argv)
                 }
             }
             my_stream.str(argv[i]);
-            if (!(my_stream >> nbr))
-            {
-                std::cout << "failed" << std::endl;
-                return (0); 
-            }
+            my_stream >> nbr;
+            // if (!(my_stream >> nbr))
+            // {
+            //     std::cout << "failed" << std::endl;
+            //     return (0); 
+            // }
             if (nbr > std::numeric_limits<int>:: max())
             {
                 std::cout << "error: Number exceeds integer range" << std::endl;
@@ -48,18 +49,18 @@ int main(int argc, char **argv)
             }
             my_stream.clear();
             v.push_back((int)nbr);
-            // d.push_back((int)nbr);
+            d.push_back((int)nbr);
         }
-        std::cout << "Before:   ";
+        std::cout << "Before:   "; 
         for (size_t i = 0; i < v.size(); i++)
         {
             std::cout << v[i] << " ";
         }
         std::cout  << std::endl;
-        // std::cout << "size = " << v.size() << std::endl;
-        clock_t start = clock();
-        merge_algo_v(v, start);
-        // merge_algo_d(q);
+        clock_t start_v = clock();
+        clock_t start_d = clock();
+        merge_algo_v(v, start_v);
+        merge_algo_d(d, start_d);
     }
     else
         std::cout << "ERROR" << std::endl;

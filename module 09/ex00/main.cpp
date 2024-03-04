@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:49:35 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/03/01 22:55:32 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/03/04 21:29:49 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 int main(int argc, char **argv)
 {
-    // (void)argv;
-    // std::cout << argc <<std::endl;
     if (argc == 2)
     {
         pars_input(argv[1]);

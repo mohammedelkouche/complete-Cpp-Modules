@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:51:41 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/03/03 00:03:17 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/03/04 22:01:44 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int    check_ligne(std::string ligne)
         std::cout << "Error: bad input => " << ligne <<std::endl;
         return(0);
     }
-    else if(day > res_date)
+    else if(day > res_date || day == 0)
     {
         std::cout << "Error: bad input => " << ligne <<std::endl;
         return(0);
@@ -150,7 +150,6 @@ void    result(std::map<std::string, double>& myMap, std::string ligne)
     else
     {
         std::map<std::string, double>::const_iterator lower = myMap.lower_bound(date);
-        // std::cout << "hello world => " << lower->first <<std::endl;
         if (lower != myMap.begin() && lower != myMap.end())
         {
             --lower;
@@ -161,11 +160,6 @@ void    result(std::map<std::string, double>& myMap, std::string ligne)
             std::cout << "Error: bad input => " << ligne <<std::endl;
             return ;
         }
-        // if (lower == myMap.begin())
-        // {
-        //     std::cout << "Error: bad input => " << ligne <<std::endl;
-        //     return ;
-        // }
     }  
 }
 
@@ -188,15 +182,17 @@ void    pars_input(std::string argv)
             pos = line.find(',');
             date = line.substr(0, pos);
             str_price = line.substr(pos + 1, line.length() - pos + 1);
-            my_stream.str(str_price);
-            if (!(my_stream >> price))
-            {
-                std::cout << "failed" << std::endl;
-                return ;
-            }   
+            my_stream << str_price;
+            my_stream >> price;
+            // if (!(my_stream >> price))
+            // {
+            //     std::cout << "failed" << std::endl;
+            //     return ;
+            // }
             Map.insert(std::make_pair(date, price));
             my_stream.clear();
         }
+        data_base.close();
     }
     else
     {
@@ -206,16 +202,18 @@ void    pars_input(std::string argv)
     // ----------------- input input file -------------------
     std::ifstream myfile(argv);
     std::string myline;
-    if (myfile.is_open()) // open is her ?
+    if (myfile.is_open())
     {
         if (!std::getline(myfile, myline))
         {
             std::cout << " the file is empti" <<std::endl;
+            myfile.close();
             return;
         }
         if (myline.compare("date | value"))
         {
             std::cout << " Error" <<std::endl;
+            myfile.close();
             return;
         }
         while(std::getline(myfile, myline))
@@ -227,5 +225,4 @@ void    pars_input(std::string argv)
     }
     else
         std::cout << "file not exsist" << std::endl;
-    myfile.close(); // when i close myfile
 }
