@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:51:41 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/03/04 22:01:44 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:30:43 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ int check_date(double year, int month)
 
 int    check_ligne(std::string ligne)
 {
-    std::string str_year;
-    std::string str_Month;
-    std::string str_day;
+    std::istringstream mystream;
     double year;
     double Month;
     double day;
@@ -80,12 +78,15 @@ int    check_ligne(std::string ligne)
             return(0);
         }
     }
-    str_year = ligne.substr(0,4);
-    str_Month = ligne.substr(5,2);
-    str_day = ligne.substr(8,2);
-    year = std::stod(str_year);
-    Month = std::stod(str_Month);
-    day = std::stod(str_day);
+    mystream.str(ligne.substr(0,4));
+    mystream >> year;
+    mystream.clear();
+    mystream.str(ligne.substr(5,2));
+    mystream >> Month;
+    mystream.clear();
+    mystream.str(ligne.substr(8,2));
+    mystream >> day;
+    mystream.clear();
     if (year < 2009 || year > 2022)
     {
         std::cout << "Error: bad input => " << ligne <<std::endl;
@@ -111,6 +112,7 @@ void    result(std::map<std::string, double>& myMap, std::string ligne)
     size_t pipe;
     std::string date;
     std::string str_price;
+    std::istringstream mystream;
     int cout = 0;
     double nbr;
     pos = ligne.find(' ');
@@ -119,7 +121,7 @@ void    result(std::map<std::string, double>& myMap, std::string ligne)
     str_price = ligne.substr(pipe + 2, ligne.length() - pipe + 2);
     for (size_t i = 0; i < str_price.length(); i++)
     {
-        if (i != 0 && str_price[i] == '.')
+        if (str_price[i] == '.')
         {
             cout++;
             continue;
@@ -135,7 +137,8 @@ void    result(std::map<std::string, double>& myMap, std::string ligne)
         std::cout << "Error: bad input => " << ligne <<std::endl;
         return ;
     }
-    nbr = std::stod(str_price);
+    mystream.str(str_price);
+    mystream >> nbr;
     if (nbr > 1000)
     {
         std::cout << "Error: too large a number." <<std::endl;
@@ -184,11 +187,6 @@ void    pars_input(std::string argv)
             str_price = line.substr(pos + 1, line.length() - pos + 1);
             my_stream << str_price;
             my_stream >> price;
-            // if (!(my_stream >> price))
-            // {
-            //     std::cout << "failed" << std::endl;
-            //     return ;
-            // }
             Map.insert(std::make_pair(date, price));
             my_stream.clear();
         }

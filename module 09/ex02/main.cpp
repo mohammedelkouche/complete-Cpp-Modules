@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 20:40:14 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/03/04 18:24:06 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/03/06 20:06:48 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ int main(int argc, char **argv)
             }
             my_stream.str(argv[i]);
             my_stream >> nbr;
-            // if (!(my_stream >> nbr))
-            // {
-            //     std::cout << "failed" << std::endl;
-            //     return (0); 
-            // }
             if (nbr > std::numeric_limits<int>:: max())
             {
                 std::cout << "error: Number exceeds integer range" << std::endl;
@@ -51,6 +46,7 @@ int main(int argc, char **argv)
             v.push_back((int)nbr);
             d.push_back((int)nbr);
         }
+        // clock_t start = clock();
         std::cout << "Before:   "; 
         for (size_t i = 0; i < v.size(); i++)
         {
@@ -58,8 +54,8 @@ int main(int argc, char **argv)
         }
         std::cout  << std::endl;
         clock_t start_v = clock();
-        clock_t start_d = clock();
         merge_algo_v(v, start_v);
+        clock_t start_d = clock();
         merge_algo_d(d, start_d);
     }
     else

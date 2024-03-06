@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 20:40:16 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/03/04 18:23:53 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/03/06 11:10:00 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ void	divide_pair_vect(std::vector<std::pair <int , int> > &v_pairs, int &single,
 	}
 	std::cout  << std::endl;
 	clock_t end = clock();
-	// std::time_t end = clock();
 	double time_elapsed = (double)(end - start) / CLOCKS_PER_SEC * 1000000; // in microseconds
 	std::cout << "Time to process a range of " << main_v.size() << " elements with std::sort: " << time_elapsed << " us" << std::endl;
 }

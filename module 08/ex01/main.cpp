@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:57:15 by mel-kouc          #+#    #+#             */
-/*   Updated: 2024/02/25 22:39:48 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/02/26 11:31:30 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,3 @@ int main()
     }
     return(0);
 }
-
-// int main()
-// {
-//     Span sp = Span(5);
-//     sp.addNumber(6);
-//     sp.addNumber(3);
-//     sp.addNumber(17);
-//     sp.addNumber(9);
-//     sp.addNumber(11);
-//     std::cout << sp.shortestSpan() << std::endl;
-//     std::cout << sp.longestSpan() << std::endl;
-//     std::vector <int>v;
-//     return 0;
-// }

@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:58:35 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/28 20:05:55 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:00:37 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,7 +168,7 @@ const Fixed &Fixed::max(Fixed const &obj1, Fixed const &obj2)
     return (obj2);
 }
 
-Fixed &Fixed::max(Fixed &obj1, Fixed  &obj2)
+Fixed &Fixed::(Fixed &obj1, Fixed  &obj2)
 {
     if (obj1.getRawBits() > obj2.getRawBits())
         return (obj1);
